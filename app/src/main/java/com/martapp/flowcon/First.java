@@ -2,11 +2,13 @@ package com.martapp.flowcon;
 
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 
 
 /**
@@ -15,6 +17,7 @@ import android.widget.TextView;
 public class First extends Fragment {
     private String  title;
     private int page;
+    //Toolbar mToolbar;
 
     public First() {
         // Required empty public constructor
@@ -34,12 +37,15 @@ public class First extends Fragment {
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
         title = getArguments().getString("someTitle");
+      //  mToolbar = (Toolbar) getActivity().findViewById(R.id.tabs);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
+
+
         return view;
     }
 
