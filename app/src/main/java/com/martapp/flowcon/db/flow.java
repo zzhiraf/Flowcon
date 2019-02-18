@@ -2,12 +2,17 @@ package com.martapp.flowcon.db;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(foreignKeys = @ForeignKey(
         entity = Note.class,
         parentColumns = "flow_id",
-        childColumns = "id"))
+        childColumns = "id"),
+        indices = {
+        @Index("id")
+        }
+)
 public class Flow {
 
     @PrimaryKey(autoGenerate = true)

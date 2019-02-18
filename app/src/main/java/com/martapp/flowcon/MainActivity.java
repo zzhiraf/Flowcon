@@ -1,5 +1,6 @@
 package com.martapp.flowcon;
 
+import android.arch.persistence.room.Room;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,16 +10,19 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.facebook.stetho.Stetho;
+import com.martapp.flowcon.db.AppDatabase;
+import com.martapp.flowcon.db.Flow;
 
 
 public class MainActivity extends AppCompatActivity {
 
 private ViewPager viewPager;
-private ViewPagerAdapter adapter;
 private TabLayout tabLayout;
 FragmentPagerAdapter adapterViewPager;
+private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,6 @@ FragmentPagerAdapter adapterViewPager;
         Stetho.initialize(initializer);
 
 
-        //setSupportActionBar(toolbar);
-
-       /* viewPager = findViewById(R.id.pager);
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-*/
         viewPager = (ViewPager) findViewById(R.id.pager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapterViewPager);
@@ -125,6 +123,14 @@ FragmentPagerAdapter adapterViewPager;
 
             }
         });
+
+
+
+        Flow flow = AppDatabase.getInstance(this).flowDao().getflowById(1);
+        String flowname = flow.getFlow_name();
+        Log.d("myTag","1 строка в базе: " + flowname);
+
+
     }
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {

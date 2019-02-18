@@ -3,9 +3,14 @@ package com.martapp.flowcon.db;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(
+        indices = {
+                @Index("flow_id")
+        }
+)
 public class Note {
 
     @PrimaryKey(autoGenerate = true)
@@ -37,29 +42,6 @@ public class Note {
         this.id = id;
     }
 
-    public Long getdate_create() {
-        return dateCreate;
-    }
-
-    public void setdate_create(Long dateCreate) {
-        this.dateCreate = dateCreate;
-    }
-
-    public int getflow_id() {
-        return flow_id;
-    }
-
-    public void setflow_id(int flow_id) {
-        this.flow_id = flow_id;
-    }
-
-    public int getpoint() {
-        return point;
-    }
-
-    public void setpoint(int point) {
-        this.point = point;
-    }
 
 
     @Override
@@ -68,6 +50,29 @@ public class Note {
         return this.id == note.id;
     }
 
+    public int getFlow_id() {
+        return flow_id;
+    }
+
+    public Long getDateCreate() {
+        return dateCreate;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setFlow_id(int flow_id) {
+        this.flow_id = flow_id;
+    }
+
+    public void setDateCreate(Long dateCreate) {
+        this.dateCreate = dateCreate;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
 }
 
 
