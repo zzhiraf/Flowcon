@@ -20,16 +20,21 @@ public abstract class AppDatabase extends RoomDatabase {
     public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(final SupportSQLiteDatabase database) {
-            String task = "CREATE TABLE `Note` (`id` INT PRIMARY KEY AUTOINCREMENT NOT NULL, `date_create` INT, `flow_id` INT NOT NULL)";
+            String task = "CREATE TABLE `Note` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date_create` INT, `flow_id` INT NOT NULL)";
             String task1 = "Drop TABLE `Note`";
 
-            String task3 = "CREATE TABLE `Flow` (`id` INT PRIMARY KEY AUTOINCREMENT NOT NULL, `flow_name` String)";
+            String task3 = "CREATE TABLE `Flow` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `flow_name` String)";
             String task4 = "Drop TABLE `Flow`";
+            String task5 = "INSERT into `Flow` VALUES(1, 'Задача1')";
+            String task6 = "INSERT into `Flow` VALUES(2, 'Задача2')";
 
             database.execSQL(task1);
             database.execSQL(task4);
             database.execSQL(task);
             database.execSQL(task3);
+
+            database.execSQL(task5);
+            database.execSQL(task6);
             Log.d("myTag", "migrate: ");
         }
     };
