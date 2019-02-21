@@ -8,7 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.martapp.flowcon.db.AppDatabase;
+import com.martapp.flowcon.db.Flow;
 
 
 /**
@@ -44,6 +48,19 @@ public class First extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
+
+        Flow flow = AppDatabase.getInstance(getContext()).flowDao().getflowById(1);
+        String flowname = flow.getFlow_name();
+        flow = AppDatabase.getInstance(getContext()).flowDao().getflowById(2);
+        String flowname2 = flow.getFlow_name();
+
+        TextView potok1 = view.findViewById(R.id.potok1);
+        potok1.setText(flowname);
+
+        TextView potok2 = view.findViewById(R.id.potok2);
+        potok2.setText(flowname2);
+
+
 
 
         return view;

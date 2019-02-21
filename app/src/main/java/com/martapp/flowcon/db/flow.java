@@ -15,7 +15,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Flow {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(index = true)
+    //@ColumnInfo(index = true)
     private int id;
 
     /**
