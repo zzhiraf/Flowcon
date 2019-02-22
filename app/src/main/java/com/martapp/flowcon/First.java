@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.martapp.flowcon.db.AppDatabase;
 import com.martapp.flowcon.db.Flow;
 
+import static java.sql.Types.NULL;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,10 +51,19 @@ public class First extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
-        Flow flow = AppDatabase.getInstance(getContext()).flowDao().getflowById(1);
-        String flowname = flow.getFlow_name();
-        flow = AppDatabase.getInstance(getContext()).flowDao().getflowById(2);
-        String flowname2 = flow.getFlow_name();
+        AppDatabase DB = AppDatabase.getInstance(getContext());
+        Flow flow = DB.flowDao().getflowById(1);
+        String flowname = "";
+        if (flow != null)
+            flowname = flow.getFlow_name();
+
+
+        flow = DB.flowDao().getflowById(2);
+        String flowname2 = "";
+        if (flow != null)
+            flowname2 = flow.getFlow_name();
+
+
 
         TextView potok1 = view.findViewById(R.id.potok1);
         potok1.setText(flowname);

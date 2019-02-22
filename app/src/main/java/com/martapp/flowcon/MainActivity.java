@@ -126,9 +126,9 @@ private AppDatabase db;
 
 
 
-        Flow flow = AppDatabase.getInstance(this).flowDao().getflowById(1);
-        String flowname = flow.getFlow_name();
-        Log.d("myTag","1 строка в базе: " + flowname);
+        //Flow flow = AppDatabase.getInstance(this).flowDao().getflowById(1);
+        //String flowname = flow.getFlow_name();
+        //Log.d("myTag","1 строка в базе: " + flowname);
 
 
     }
