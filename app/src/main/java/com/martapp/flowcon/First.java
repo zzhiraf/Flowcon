@@ -66,10 +66,10 @@ public class First extends Fragment {
 
 
         TextView potok1 = view.findViewById(R.id.potok1);
-        potok1.setText(flowname);
+        //potok1.setText(flowname);
 
         TextView potok2 = view.findViewById(R.id.potok2);
-        potok2.setText(flowname2);
+        //potok2.setText(flowname2);
 
 
 

@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/colorGrey"
     tools:context=".First">
 
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <TextView
+        android:id="@+id/txt_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+
+
         android:gravity="center"
         android:text="Потоки:"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:id = "@+id/txt_display"
-        android:layout_weight="1"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124">
 
         <TextView
             android:id="@+id/potok1"
@@ -30,61 +49,71 @@
             android:layout_height="match_parent"
             android:layout_marginRight="64dp"
             android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
+            android:text="Работа"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="Работа" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button1minus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/minus"
-            />
+            android:layout_height="36dp"
+
+            android:background="@mipmap/ic_minus"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply" />
 
         <EditText
             android:id="@+id/e_potok1"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:ems="10"
+            android:gravity="center"
             android:inputType="number" />
 
         <Button
             android:id="@+id/button1plus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/plus"
-           />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_plus" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
             android:id="@+id/potok2"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginRight="64dp"
-            android:gravity="center"
             android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
             android:text="Семья"
-            android:textStyle="bold"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/button2minus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/minus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_minus" />
 
         <EditText
             android:id="@+id/e_potok2"
@@ -97,35 +126,44 @@
         <Button
             android:id="@+id/button2plus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/plus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_plus" />
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
         <TextView
             android:id="@+id/potok3"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginRight="64dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="Друзья" />
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
+            android:text="Друзья"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/button3minus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/minus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_minus" />
 
         <EditText
             android:id="@+id/e_potok3"
@@ -133,42 +171,51 @@
             android:layout_height="match_parent"
             android:ems="10"
             android:gravity="center"
+
             android:inputType="number" />
 
         <Button
             android:id="@+id/button3plus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/plus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_plus" />
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
-          <TextView
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
             android:id="@+id/potok4"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginRight="64dp"
-            android:gravity="center"
-            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="Личное" />
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
+            android:text="Личное"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button4minus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/minus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_minus" />
 
         <EditText
             android:id="@+id/e_potok4"
@@ -181,34 +228,42 @@
         <Button
             android:id="@+id/button4plus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/plus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_plus" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
-    <TextView
-        android:id="@+id/potok5"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_marginRight="64dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="Семья" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:id="@+id/potok5"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="64dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
+            android:text="Семья"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/button5minus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/minus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_minus" />
 
         <EditText
             android:id="@+id/e_potok5"
@@ -221,9 +276,9 @@
         <Button
             android:id="@+id/button5plus"
             android:layout_width="36dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/plus"
-            />
+            android:layout_height="36dp"
+            android:backgroundTint="@color/colorGrey"
+            android:backgroundTintMode="multiply"
+            android:background="@mipmap/ic_plus" />
     </LinearLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

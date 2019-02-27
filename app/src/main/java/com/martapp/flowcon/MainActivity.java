@@ -61,9 +61,9 @@ private AppDatabase db;
         final TabLayout.Tab test02 = tabLayout.newTab();
         final TabLayout.Tab test03 = tabLayout.newTab();
 
-        test01.setIcon(R.drawable.button);
-        test02.setIcon(R.drawable.button3);
-        test03.setIcon(R.drawable.note);
+        test01.setIcon(R.mipmap.ic_spisok);
+        test02.setIcon(R.mipmap.ic_chart);
+        test03.setIcon(R.mipmap.ic_settings);
 
         tabLayout.addTab(test01,0);
         tabLayout.addTab(test02,1);
@@ -83,19 +83,19 @@ private AppDatabase db;
             public void onPageSelected(int position) {
                 switch (position){
                     case 0:
-                        test01.setIcon(R.drawable.button);
-                        test02.setIcon(R.drawable.button3);
-                        test03.setIcon(R.drawable.note);
+                        test01.setIcon(R.mipmap.ic_spisok);
+                        test02.setIcon(R.mipmap.ic_chart);
+                        test03.setIcon(R.mipmap.ic_settings);
                         break;
                     case 1:
-                        test01.setIcon(R.drawable.button);
-                        test02.setIcon(R.drawable.button3);
-                        test03.setIcon(R.drawable.note);
+                        test01.setIcon(R.mipmap.ic_spisok);
+                        test02.setIcon(R.mipmap.ic_chart);
+                        test03.setIcon(R.mipmap.ic_settings);
                         break;
                     case 2:
-                        test01.setIcon(R.drawable.button);
-                        test02.setIcon(R.drawable.button3);
-                        test03.setIcon(R.drawable.note);
+                        test01.setIcon(R.mipmap.ic_spisok);
+                        test02.setIcon(R.mipmap.ic_chart);
+                        test03.setIcon(R.mipmap.ic_settings);
                         break;
                 }
             }
