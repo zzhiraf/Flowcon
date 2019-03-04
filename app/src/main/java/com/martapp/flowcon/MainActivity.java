@@ -9,8 +9,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.facebook.stetho.Stetho;
 import com.martapp.flowcon.db.AppDatabase;
@@ -60,14 +58,17 @@ private AppDatabase db;
         final TabLayout.Tab test01 = tabLayout.newTab();
         final TabLayout.Tab test02 = tabLayout.newTab();
         final TabLayout.Tab test03 = tabLayout.newTab();
+        final TabLayout.Tab test04 = tabLayout.newTab();
 
         test01.setIcon(R.mipmap.ic_spisok);
         test02.setIcon(R.mipmap.ic_chart);
-        test03.setIcon(R.mipmap.ic_settings);
+        test03.setIcon(R.mipmap.ic_chart);
+        test04.setIcon(R.mipmap.ic_settings);
 
         tabLayout.addTab(test01,0);
         tabLayout.addTab(test02,1);
         tabLayout.addTab(test03,2);
+        tabLayout.addTab(test04,3);
 
      //   tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.colorPrimary));
      //   tabLayout.setSelectedTabIndicator(R.color.colorAccent);
@@ -85,17 +86,26 @@ private AppDatabase db;
                     case 0:
                         test01.setIcon(R.mipmap.ic_spisok);
                         test02.setIcon(R.mipmap.ic_chart);
-                        test03.setIcon(R.mipmap.ic_settings);
+                        test03.setIcon(R.mipmap.ic_chart);
+                        test04.setIcon(R.mipmap.ic_settings);
                         break;
                     case 1:
                         test01.setIcon(R.mipmap.ic_spisok);
                         test02.setIcon(R.mipmap.ic_chart);
-                        test03.setIcon(R.mipmap.ic_settings);
+                        test03.setIcon(R.mipmap.ic_chart);
+                        test04.setIcon(R.mipmap.ic_settings);
                         break;
                     case 2:
                         test01.setIcon(R.mipmap.ic_spisok);
                         test02.setIcon(R.mipmap.ic_chart);
-                        test03.setIcon(R.mipmap.ic_settings);
+                        test03.setIcon(R.mipmap.ic_chart);
+                        test04.setIcon(R.mipmap.ic_settings);
+                        break;
+                    case 3:
+                        test01.setIcon(R.mipmap.ic_spisok);
+                        test02.setIcon(R.mipmap.ic_chart);
+                        test03.setIcon(R.mipmap.ic_chart);
+                        test04.setIcon(R.mipmap.ic_settings);
                         break;
                 }
             }
@@ -134,7 +144,7 @@ private AppDatabase db;
     }
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
+        private static int NUM_ITEMS = 4;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -154,7 +164,9 @@ private AppDatabase db;
                     return First.newInstance(0, "Ввод данных по потокам");
                 case 1: // Fragment # 0 - This will show FirstFragment different title
                     return Second.newInstance(1, "График потоков");
-                case 2: // Fragment # 1 - This will show SecondFragment
+                case 2: // Fragment # 0 - This will show FirstFragment different title
+                    return Graph.newInstance(1, "График потоков");
+                case 3: // Fragment # 1 - This will show SecondFragment
                     return frag_kategorii.newInstance(2, "Список категорий");
                 default:
                     return null;
