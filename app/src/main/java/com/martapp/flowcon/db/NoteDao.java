@@ -18,6 +18,9 @@ public interface NoteDao {
     @Query("SELECT * FROM Note WHERE id = :id")
     Note getNoteById(long id);
 
+    @Query("SELECT * FROM Note WHERE date_create = :date_create and flow_id=:flowId")
+    Note getNoteByDateAndID(long date_create,int flowId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Note... notes);
 

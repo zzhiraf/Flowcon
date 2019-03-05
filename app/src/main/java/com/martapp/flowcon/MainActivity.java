@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.facebook.stetho.Stetho;
 import com.martapp.flowcon.db.AppDatabase;
@@ -142,6 +143,8 @@ private AppDatabase db;
 
 
     }
+
+
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {
         private static int NUM_ITEMS = 4;

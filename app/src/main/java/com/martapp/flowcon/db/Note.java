@@ -7,10 +7,12 @@ import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(indices={
-        @Index(value="id"),
-        @Index(value="flow_id", unique = true)
-})
+
+@Entity(foreignKeys = @ForeignKey(
+                entity = Flow.class,
+                parentColumns = "id",
+                childColumns = "id"))
+
 public class Note {
 
     @PrimaryKey(autoGenerate = true)

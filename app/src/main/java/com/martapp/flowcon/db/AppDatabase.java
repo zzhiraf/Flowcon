@@ -17,7 +17,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
 
 
-    public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+   /* public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(final SupportSQLiteDatabase database) {
             String task = "CREATE TABLE `Note` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date_create` INT, `flow_id` INT NOT NULL)";
@@ -37,7 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
             database.execSQL(task6);
             Log.d("myTag", "migrate: ");
         }
-    };
+    };*/
 
     public static void destroyInstance() {
         INSTANCE = null;
